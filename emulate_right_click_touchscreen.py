@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 from pynput.mouse import Listener
 from pynput.mouse import Button, Controller
 import time
