@@ -7,7 +7,7 @@ import time
 last_time = -1
 last_pos = [-1, -1]
 
-threshold = 30
+threshold = 15
 timeout = 200
 
 
@@ -21,7 +21,7 @@ def on_click(x, y, button, pressed):
     if pressed is False:
       is_within_threshold = False
       is_within_timeout = True
-      if threshold > abs(last_pos[0] - x) or threshold > abs(last_pos[1] - y):
+      if threshold > abs(last_pos[0] - x) and threshold > abs(last_pos[1] - y):
         is_within_threshold = True
       if (time.time() - last_time) * 1000 > timeout:
         is_within_timeout = False
