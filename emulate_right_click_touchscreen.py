@@ -8,7 +8,7 @@ last_time = -1
 last_pos = [-1, -1]
 
 threshold = 15
-timeout = 200
+timeout = 300
 
 
 def on_click(x, y, button, pressed):
