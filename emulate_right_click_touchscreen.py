@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+from pynput.keyboard import Key, Controller as KeyController
 from pynput.mouse import Listener
 from pynput.mouse import Button, Controller
 import time
@@ -37,9 +38,12 @@ def on_click(x, y, button, pressed):
       if is_within_timeout is False \
       and is_within_threshold is True \
       and mouse_moved == 0:
-        mouse = Controller()
-        mouse.press(Button.right)
-        mouse.release(Button.right)
+        key = KeyController()
+        key.press(Key.menu)
+        key.release(Key.menu)
+        #mouse = Controller()
+        #mouse.press(Button.right)
+        #mouse.release(Button.right)
       last_pos = [-1, -1]
       last_time = -1
 
@@ -49,7 +53,6 @@ def on_move(x, y):
   if last_pos[0] != -1 and last_pos[1] != -1:
     if abs(last_pos[0] - x) > threshold\
     or abs(last_pos[1] - y) > threshold:
-      print('moved')
       mouse_moved = 1
 
 
