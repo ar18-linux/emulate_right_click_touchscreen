@@ -39,11 +39,11 @@ def on_click(x, y, button, pressed):
       and is_within_threshold is True \
       and mouse_moved == 0:
         key = KeyController()
-        key.press(Key.menu)
-        key.release(Key.menu)
-        #mouse = Controller()
-        #mouse.press(Button.right)
-        #mouse.release(Button.right)
+        #key.press(Key.menu)
+        #key.release(Key.menu)
+        mouse = Controller()
+        mouse.press(Button.right)
+        mouse.release(Button.right)
       last_pos = [-1, -1]
       last_time = -1
 
