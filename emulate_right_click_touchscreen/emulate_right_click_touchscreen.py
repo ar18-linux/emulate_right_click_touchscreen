@@ -17,7 +17,7 @@ def _read_vars(path):
         ret[tokens[0]] = "=".join(tokens[1:])
         print(tokens[0])
       line = file.readline()
-          
+
   return ret
 
 
@@ -26,7 +26,7 @@ timeout_default = 300
 
 last_time = -1
 last_pos = [-1, -1]
-vars = _read_vars("/home/nulysses/.config/emulate_right_click_touchscreen/vars")
+vars = _read_vars("/home/nulysses/.config/ar18/emulate_right_click_touchscreen/vars")
 threshold = threshold_default
 timeout = timeout_default
 
