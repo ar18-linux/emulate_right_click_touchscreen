@@ -64,6 +64,10 @@ def run(_threshold = threshold_default, _timeout = timeout_default):
     listener.join()
 
 
+def _read_vars(path):
+    with 
+
+
 if __name__ == "__main__":
   if len(sys.argv) < 3:
     _threshold = 5

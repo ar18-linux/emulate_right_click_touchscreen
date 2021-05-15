@@ -1,0 +1,5 @@
+# Timeout in milliseconds
+timeout=300
+
+# Offset tolerance in pixel
+threshold=5

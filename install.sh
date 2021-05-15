@@ -19,7 +19,12 @@ rm -rf "${install_dir}/${module_name}"
 cp -rf "${script_dir}/${module_name}" "${install_dir}/${module_name}"
 chmod +x "${install_dir}/${module_name}/"* -R
 
-mkdir -p "/home/${user_name}/.config/ar18/emulate_right_click_touchscreen"
-chown "${user_name}:${user_name}" "/home/${user_name}/.config/ar18/emulate_right_click_touchscreen"
+mkdir -p "/home/${user_name}/.config/ar18/${module_name}"
+chown "${user_name}:${user_name}" "/home/${user_name}/.config/ar18/${module_name}"
+
+if [ ! -f "/home/${user_name}/.config/ar18/${module_name}/vars" ]; then
+  cp "${script_dir}/${module_name}/vars" "/home/${user_name}/.config/ar18/${module_name}/vars"
+  chown "${user_name}:${user_name}" "/home/${user_name}/.config/ar18/${module_name}/vars"
+fi
 
 pip3 install pynput
