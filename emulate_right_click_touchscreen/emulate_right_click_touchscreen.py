@@ -1,17 +1,32 @@
-#!/usr/bin/python3
-
+#!/usr/bin/env python3
 from pynput.keyboard import Key, Controller as KeyController
 from pynput.mouse import Listener
 from pynput.mouse import Button, Controller
 import time
 import sys
 
+
+def _read_vars(path):
+  ret = {}
+  with open(path, "r") as file:
+    line = file.readline()
+    while(line):
+      line = line.strip()
+      if(line != "" and line[0] != "#" and line.find("=") != -1):
+        tokens = line.split("=")
+        ret[tokens[0]] = "=".join(tokens[1:])
+        print(tokens[0])
+      line = file.readline()
+          
+  return ret
+
+
 threshold_default = 5
 timeout_default = 300
 
 last_time = -1
 last_pos = [-1, -1]
-
+vars = _read_vars("/home/nulysses/.config/emulate_right_click_touchscreen/vars")
 threshold = threshold_default
 timeout = timeout_default
 
@@ -64,11 +79,10 @@ def run(_threshold = threshold_default, _timeout = timeout_default):
     listener.join()
 
 
-def _read_vars(path):
-    with 
-
-
 if __name__ == "__main__":
+  import getpass
+  print(getpass.getuser())
+  exit(0)
   if len(sys.argv) < 3:
     _threshold = 5
     _timeout = 300
