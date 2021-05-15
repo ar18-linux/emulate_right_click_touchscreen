@@ -19,7 +19,7 @@ rm -rf "${install_dir}/${module_name}"
 cp -rf "${script_dir}/${module_name}" "${install_dir}/${module_name}"
 chmod +x "${install_dir}/${module_name}/"* -R
 
-mkdir -p "/home/$(user_name)/.config/ar18/emulate_right_click_touchscreen"
-chown "$(user_name):$(user_name)" "/home/$(user_name)/.config/ar18/emulate_right_click_touchscreen"
+mkdir -p "/home/${user_name}/.config/ar18/emulate_right_click_touchscreen"
+chown "${user_name}:${user_name}" "/home/${user_name}/.config/ar18/emulate_right_click_touchscreen"
 
 pip3 install pynput
