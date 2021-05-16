@@ -28,3 +28,10 @@ if [ ! -f "/home/${user_name}/.config/ar18/${module_name}/vars" ]; then
 fi
 
 pip3 install pynput
+
+if [ -d "/home/${user_name}/.config/ar18/autostarts" ]; then
+  auto_start="/home/${user_name}/.config/ar18/autostarts/${module_name}.sh"
+  cp "${script_dir}/${module_name}/startup.sh" "${auto_start}"
+  echo "${install_dir}/${module_name}/${module_name}.py" >> "${auto_start}"
+  chmod +x "${auto_start}"
+fi
