@@ -27,6 +27,7 @@ if [ ! -f "/home/${user_name}/.config/ar18/${module_name}/vars" ]; then
   chown "${user_name}:${user_name}" "/home/${user_name}/.config/ar18/${module_name}/vars"
 fi
 
+pacman -Sy python-pip --noconfirm
 pip3 install pynput
 
 if [ -d "/home/${user_name}/.config/ar18/autostarts" ]; then
