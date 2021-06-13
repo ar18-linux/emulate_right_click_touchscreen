@@ -1,4 +1,5 @@
 #!/bin/bash
+# ar18
 
 # Script template version 2021-06-12.03
 # Make sure some modification to LD_PRELOAD will not alter the result or outcome in any way
