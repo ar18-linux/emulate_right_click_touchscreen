@@ -38,7 +38,7 @@ obtain_sudo_password
 
 ar18_install "${install_dir}" "${module_name}" "${script_dir}"
 
-pacman_install python-pip
+pacman_install python-pip base-devel
 pip_install pynput
 
 ##################################SCRIPT_END###################################
